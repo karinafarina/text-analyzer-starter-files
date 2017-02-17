@@ -18,7 +18,7 @@ $(document).ready(function() {
 		runningTotal = words[i].length + runningTotal;
 	}
 	$('.js-average').text(runningTotal/words.length);
-	$(".text-report").removeClass(".hidden");
+	$(".text-report").removeClass("hidden");
 	});
 });
 
