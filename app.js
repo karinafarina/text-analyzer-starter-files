@@ -1,18 +1,25 @@
 
 $(document).ready(function() { 
-	$('form').submit(function(event) {
-		console.log("Hello");
+	$('.js-form').submit(function(event) {
 	event.preventDefault();
-	var wordCount = $('#user-text').val().split(' ');
-	alert(wordCount.length);
-	$("#numWords").text(wordCount.length);
-	})
+	var words = $('#user-text').val().split(' ');
+	console.log(words.length);
+	$(".js-numWords").text(words.length);
+	var unique = [];
+	for(var i=0;i<words.length;i++) {
+		if(unique.indexOf(words[i]) === -1) {
+		  unique.push(words[i]);
+		  console.log(unique.length);
+		}
+	}
+	$(".js-unique").text(unique.length);
+	var runningTotal = 0;
+	for(var i=0;i<words.length;i++) {
+		runningTotal = words[i].length + runningTotal;
+	}
+	$('.js-average').text(runningTotal/words.length);
+	
+	});
 });
 
-
-
-
-
-
-
-
+		
